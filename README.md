@@ -1,14 +1,20 @@
 # basedgoose.nvim
 
-Neovim config based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+**A Neovim configuration based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)**  
+---
+![Dashboard Preview](img/dash.png)
+
+![Main UI Preview](img/main.png)
+---
 
 ## Requirements
 
-- neovim 0.10+
-- fzf
-- ripgrrep
-- fd
-- some nerd font
+- **Neovim** 0.11+
+- [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
+- [A Nerd Font](https://www.nerdfonts.com/font-downloads)
+---
 
 ## Installation
 
