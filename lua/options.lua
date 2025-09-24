@@ -47,11 +47,14 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
-vim.cmd.colorscheme 'cursed'
-vim.cmd [[
-  hi Normal guibg=none ctermbg=none
-  hi NormalNC guibg=none ctermbg=none
-]]
+vim.cmd.colorscheme 'matugen'
+
+-- set transparent bg
+-- vim.cmd [[
+--  hi Normal guibg=none ctermbg=none
+--  hi NormalNC guibg=none ctermbg=none
+--]]
+
 vim.api.nvim_set_hl(0, 'Comment', { italic = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
