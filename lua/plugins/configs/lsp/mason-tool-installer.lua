@@ -5,8 +5,8 @@ return {
     'williamboman/mason-lspconfig.nvim',
   },
   config = function()
-    local servers = { 'clangd', 'pyright', 'rust_analyzer', 'ts_ls', 'lua_ls' }
-    local tools = { 'stylua', 'clang-format' }
+    local servers = { 'clangd', 'pyright', 'rust_analyzer', 'ts_ls', 'lua_ls', 'nil_ls' }
+    local tools = { 'stylua', 'clang-format', 'nixfmt' }
     local ensure_installed = vim.list_extend(servers, tools)
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
   end,

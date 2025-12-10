@@ -58,6 +58,7 @@ return {
       pyright = {},
       rust_analyzer = {},
       ts_ls = {},
+      nil_ls = {},
       lua_ls = {
         settings = {
           Lua = {
