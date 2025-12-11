@@ -50,10 +50,10 @@ vim.o.confirm = true
 vim.cmd.colorscheme 'cursed'
 
 -- set transparent bg
--- vim.cmd [[
---  hi Normal guibg=none ctermbg=none
---  hi NormalNC guibg=none ctermbg=none
---]]
+vim.cmd [[
+ hi Normal guibg=none ctermbg=none
+ hi NormalNC guibg=none ctermbg=none
+]]
 
 vim.api.nvim_set_hl(0, 'Comment', { italic = true })
 
