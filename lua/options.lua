@@ -47,7 +47,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
-vim.cmd.colorscheme 'matugen'
+vim.cmd.colorscheme 'cursed'
 
 -- set transparent bg
 -- vim.cmd [[
