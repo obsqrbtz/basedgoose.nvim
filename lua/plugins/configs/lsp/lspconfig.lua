@@ -1,6 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   config = function()
+    local utils = require('utils')
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -69,6 +70,13 @@ return {
         },
       },
     }
+
+    if utils.is_nixos() then
+      for server_name, server_config in pairs(servers) do
+        server_config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_config.capabilities or {})
+        require('lspconfig')[server_name].setup(server_config)
+      end
+    else
     require('mason-lspconfig').setup {
       ensure_installed = {},
       automatic_installation = false,
@@ -80,5 +88,6 @@ return {
         end,
       },
     }
+end
   end,
 }
