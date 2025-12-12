@@ -47,7 +47,9 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
-vim.cmd.colorscheme 'cursed'
+if pcall(vim.cmd, 'colorscheme clrsync') == false then
+  vim.cmd('colorscheme cursed')
+end
 
 -- set transparent bg
 vim.cmd [[
