@@ -52,7 +52,7 @@ local palette = {
     escape_char = "#B47837",
 
     -- Editor - UI
-    border = "#4A4E69",
+    border = "#3E3E65",
     indent_guide = "#2A2A2A",
     search_match = "#9A8652",
     search_match_active = "#9A8652",
