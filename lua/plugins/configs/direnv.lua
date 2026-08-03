@@ -1,6 +1,6 @@
 return {
-  "NotAShelf/direnv.nvim",
+  'NotAShelf/direnv.nvim',
   config = function()
-    require("direnv").setup({})
+    require('direnv').setup {}
   end,
 }

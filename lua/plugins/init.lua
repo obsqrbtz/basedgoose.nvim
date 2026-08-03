@@ -33,6 +33,7 @@ local plugin_configs = {
 }
 
 require('lazy').setup(plugin_configs, {
+  rocks = { enabled = false },
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',

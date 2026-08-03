@@ -9,7 +9,7 @@
 
 ## Requirements
 
-- **Neovim** 0.11+
+- **Neovim** 0.12+
 - [fzf](https://github.com/junegunn/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
