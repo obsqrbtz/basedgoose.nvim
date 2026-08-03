@@ -54,10 +54,10 @@ vim.diagnostic.config {
   severity_sort = true,
   float = { source = 'if_many' },
   underline = { severity = vim.diagnostic.severity.ERROR },
-  virtual_text = {
-    source = 'if_many',
-    spacing = 2,
-  },
+  -- Long messages appended to the end of a line are unreadable. Render them on
+  -- their own wrapped lines instead, and only for the line the cursor is on
+  virtual_text = false,
+  virtual_lines = { current_line = true },
   signs = vim.g.have_nerd_font and {
     text = {
       [vim.diagnostic.severity.ERROR] = '󰅚 ',

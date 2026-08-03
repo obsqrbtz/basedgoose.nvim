@@ -12,7 +12,14 @@ return {
           mode = mode or 'n'
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
-        map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
+        -- Renames the symbol under the cursor across the project.
+        if pcall(require, 'inc_rename') then
+          vim.keymap.set('n', 'grn', function()
+            return ':IncRename ' .. vim.fn.expand '<cword>'
+          end, { buffer = event.buf, expr = true, desc = 'LSP: [R]e[n]ame' })
+        else
+          map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
+        end
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
         map('grr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
         map('gri', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')

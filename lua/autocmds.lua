@@ -9,6 +9,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- `shows readable diag under the current line
+local diag_augroup = vim.api.nvim_create_augroup('diagnostic-virtual-lines', { clear = true })
+
+vim.api.nvim_create_autocmd('InsertEnter', {
+  desc = 'Hide diagnostic virtual lines while typing',
+  group = diag_augroup,
+  callback = function()
+    vim.diagnostic.config { virtual_lines = false }
+  end,
+})
+
+vim.api.nvim_create_autocmd('InsertLeave', {
+  desc = 'Restore diagnostic virtual lines after typing',
+  group = diag_augroup,
+  callback = function()
+    vim.diagnostic.config { virtual_lines = { current_line = true } }
+  end,
+})
+
 -- Transparent background + italic comments. Loading a colorscheme clears all
 -- highlights, so these have to be reapplied every time rather than set once.
 -- `nvim_set_hl` replaces a group outright (unlike `:highlight`, which merges),
