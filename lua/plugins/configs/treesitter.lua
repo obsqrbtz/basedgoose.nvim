@@ -3,6 +3,7 @@ local ensure_installed = {
   'c',
   'cpp',
   'diff',
+  'dockerfile',
   'html',
   'lua',
   'luadoc',

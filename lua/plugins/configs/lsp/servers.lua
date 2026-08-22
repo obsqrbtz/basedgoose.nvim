@@ -5,6 +5,7 @@ return {
   rust_analyzer = {},
   ts_ls = {},
   nil_ls = {},
+  docker_language_server = {},
   lua_ls = {
     settings = {
       Lua = {

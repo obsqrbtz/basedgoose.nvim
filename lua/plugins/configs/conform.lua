@@ -30,6 +30,8 @@ return {
       c = { 'clang-format' },
       cpp = { 'clang-format' },
       nix = { 'nixfmt' },
+      dockerfile = { 'dockerfmt' },
+      yaml = { 'yamlfmt' },
     },
   },
 }

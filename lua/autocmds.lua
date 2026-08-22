@@ -50,3 +50,33 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 apply_overrides()
+
+-- Filenames alone are not enough: a stack usually keeps its services in files
+-- named after the service (`immich.yaml`, `arr.yaml`) and reduces `compose.yaml`
+-- to a list of `include:`s.
+local function is_compose(_, bufnr)
+  if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then
+    return nil
+  end
+  for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, 200, false)) do
+    if line:match '^services:%s*$' or line:match '^services:%s*#' then
+      return 'yaml.docker-compose'
+    end
+  end
+  return nil
+end
+
+vim.filetype.add {
+  filename = {
+    ['compose.yaml'] = 'yaml.docker-compose',
+    ['compose.yml'] = 'yaml.docker-compose',
+    ['docker-compose.yaml'] = 'yaml.docker-compose',
+    ['docker-compose.yml'] = 'yaml.docker-compose',
+  },
+  pattern = {
+    ['.*/compose%..+%.ya?ml'] = 'yaml.docker-compose',
+    ['.*/docker%-compose%..+%.ya?ml'] = 'yaml.docker-compose',
+    ['.*/%.gitlab%-ci%.ya?ml'] = 'yaml',
+    ['.*%.ya?ml'] = is_compose,
+  },
+}
