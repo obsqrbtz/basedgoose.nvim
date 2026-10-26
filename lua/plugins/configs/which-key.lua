@@ -42,6 +42,7 @@ return {
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>g', group = '[G]it' },
       { '<leader>x', group = 'Diagnostics' },
+      { '<leader>o', group = '[O]bsidian' },
     },
   },
 }

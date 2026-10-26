@@ -34,6 +34,7 @@ local plugin_configs = {
   require 'plugins.configs.lsp.mason-tool-installer',
   require 'plugins.configs.dashboard-nvim',
   require 'plugins.configs.direnv',
+  require 'plugins.configs.obsidian',
 }
 
 require('lazy').setup(plugin_configs, {
