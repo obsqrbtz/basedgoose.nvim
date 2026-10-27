@@ -1,7 +1,7 @@
 local M = {}
 
 function M.is_nixos()
-  return vim.fn.filereadable '/etc/NIXOS' == 1 or vim.env.NIX_PATH ~= nil
+  return vim.fn.filereadable '/etc/NIXOS' == 1
 end
 
 function M.is_windows()
