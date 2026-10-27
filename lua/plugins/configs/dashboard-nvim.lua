@@ -33,10 +33,15 @@ return {
         week_header = {
           enable = false,
         },
+        project = {
+          action = function(path)
+            require('fzf-lua').files { cwd = path }
+          end,
+        },
         shortcut = {
-          { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+          { icon = ' ', icon_hl = '@property', desc = 'Update', group = '@property', action = 'Lazy update', key = 'u' },
           {
-            icon = ' ',
+            icon = ' ',
             icon_hl = '@variable',
             desc = 'Files',
             group = 'Label',
