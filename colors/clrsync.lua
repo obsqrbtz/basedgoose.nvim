@@ -4,95 +4,95 @@ vim.g.colors_name = "clrsync"
 
 local palette = {
     -- General UI
-    bg = "#141313",
-    bg_alt = "#292829",
-    fg = "#E5E2E1",
-    fg_alt = "#C7C6CB",
-    grey = "#909095",
+    bg = "#111111",
+    bg_alt = "#2A2A2A",
+    fg = "#D2D2D2",
+    fg_alt = "#849899",
+    grey = "#849899",
 
     -- Accent / keyword colors
-    blue = "#C7C6CA",
-    cyan = "#0074F9",
-    violet = "#606166",
-    magenta = "#CDC4C8",
-    orange = "#C8C6C7",
-    yellow = "#D65A00",
-    green = "#008D31",
-    red = "#DC377A",
+    blue = "#AA477B",
+    cyan = "#5A7CA8",
+    violet = "#5A7CA8",
+    magenta = "#B5B5B5",
+    orange = "#B47837",
+    yellow = "#B47837",
+    green = "#668A51",
+    red = "#AA4E4A",
 
     -- Editor - Basic
-    cursor = "#E5E2E1",
-    selection = "#373637",
-    dark_blue = "#373637",
-    line_highlight = "#1C1B1C",
-    folded = "#1C1B1C",
-    selection_inactive = "#292829",
+    cursor = "#D2D2D2",
+    selection = "#383838",
+    dark_blue = "#383838",
+    line_highlight = "#1D1D1D",
+    folded = "#1D1D1D",
+    selection_inactive = "#2A2A2A",
 
     -- Editor - Gutter
-    gutter_bg = "#141313",
-    line_number = "#909095",
-    line_number_active = "#E5E2E1",
+    gutter_bg = "#111111",
+    line_number = "#849899",
+    line_number_active = "#D2D2D2",
 
     -- Editor - Syntax
-    comment = "#909095",
-    string = "#CDC4C8",
-    number = "#C8C6C7",
-    boolean = "#C8C6C7",
-    keyword = "#C7C6CA",
-    operator = "#E5E2E1",
-    function_ = "#656063",
-    variable = "#E5E2E1",
-    parameter = "#CDC4C8",
-    property = "#CDC4C8",
-    constant = "#C8C6C7",
-    type_ = "#C7C6CA",
-    class = "#C7C6CA",
-    interface = "#C7C6CA",
-    enum = "#C7C6CA",
-    namespace = "#606166",
-    tag = "#FFB4AB",
-    punctuation = "#E5E2E1",
-    link = "#606166",
-    regex = "#626163",
-    attribute = "#656063",
-    decorator = "#656063",
-    escape_char = "#C8C6C7",
+    comment = "#849899",
+    string = "#668A51",
+    number = "#B47837",
+    boolean = "#B47837",
+    keyword = "#AA477B",
+    operator = "#D2D2D2",
+    function_ = "#5A7CA8",
+    variable = "#D2D2D2",
+    parameter = "#B5B5B5",
+    property = "#9A8652",
+    constant = "#B47837",
+    type_ = "#3A898C",
+    class = "#3A898C",
+    interface = "#3A898C",
+    enum = "#3A898C",
+    namespace = "#5A7CA8",
+    tag = "#AA4E4A",
+    punctuation = "#D2D2D2",
+    link = "#5A7CA8",
+    regex = "#AA477B",
+    attribute = "#9A8652",
+    decorator = "#9A8652",
+    escape_char = "#B47837",
 
     -- Editor - UI
-    border = "#5B5A5B",
-    indent_guide = "#373637",
-    search_match = "#251A27",
-    search_match_active = "#BE3FD6",
-    bracket_match = "#C7C6CA",
-    whitespace = "#454445",
+    border = "#5D5D5D",
+    indent_guide = "#383838",
+    search_match = "#221C0B",
+    search_match_active = "#9A8652",
+    bracket_match = "#3A898C",
+    whitespace = "#464646",
 
     -- Editor - Diagnostics
-    error_fg = "#DC377A",
-    warning_fg = "#D65A00",
-    info_fg = "#0074F9",
-    hint_fg = "#008D31",
+    error_fg = "#AA4E4A",
+    warning_fg = "#B47837",
+    info_fg = "#5A7CA8",
+    hint_fg = "#668A51",
 
     -- Editor - Diff
-    diff_add = "#008D31",
-    diff_change = "#D65A00",
-    diff_delete = "#DC377A",
+    diff_add = "#668A51",
+    diff_change = "#B47837",
+    diff_delete = "#AA4E4A",
 
     -- Semantic
-    success = "#008D31",
-    warning = "#D65A00",
-    error = "#DC377A",
-    info = "#0074F9",
+    success = "#668A51",
+    warning = "#B47837",
+    error = "#AA4E4A",
+    info = "#5A7CA8",
 
     -- Base (terminal / muted)
-    base0 = "#141313",
-    base1 = "#1C1B1C",
-    base2 = "#292829",
-    base3 = "#4C4B4C",
-    base4 = "#909095",
-    base5 = "#909095",
-    base6 = "#909095",
-    base7 = "#C7C6CB",
-    base8 = "#E5E2E1",
+    base0 = "#111111",
+    base1 = "#1D1D1D",
+    base2 = "#2A2A2A",
+    base3 = "#4D4D4D",
+    base4 = "#849899",
+    base5 = "#849899",
+    base6 = "#849899",
+    base7 = "#849899",
+    base8 = "#D2D2D2",
 }
 
 local function set_hl(group, opts)
@@ -133,13 +133,14 @@ set_hl("TermNormalNC", { link = "TermNormal" })
 set_hl("WildMenu", { bg = palette.selection_inactive, fg = palette.fg })
 set_hl("Separator", { fg = palette.fg_alt })
 set_hl("VertSplit", { bg = palette.bg, fg = palette.grey })
+set_hl("WinSeparator", { link = "VertSplit" })
 
 set_hl("TabLine", { bg = palette.bg_alt, fg = palette.base7, bold = true })
 set_hl("TabLineSel", { bg = palette.bg, fg = palette.blue, bold = true })
 set_hl("TabLineFill", { bg = palette.base1, bold = true })
 
-set_hl("StatusLine", { bg = palette.base3, fg = palette.base8 })
-set_hl("StatusLineNC", { bg = palette.bg_alt, fg = palette.base6 })
+set_hl("StatusLine", { bg = palette.base1, fg = palette.fg_alt })
+set_hl("StatusLineNC", { bg = palette.base1, fg = palette.grey })
 set_hl("StatusLinePart", { bg = palette.bg_alt, fg = palette.base6, bold = true })
 set_hl("StatusLinePartNC", { link = "StatusLinePart" })
 
@@ -381,3 +382,33 @@ set_hl("netrwDir", { link = "Directory" })
 set_hl("netrwExe", { fg = palette.green, bold = true })
 set_hl("netrwMakefile", { fg = palette.yellow, bold = true })
 set_hl("netrwTreeBar", { link = "Comment" })
+
+--- Tree-sitter (nvim 0.10+ capture names)
+set_hl("@module", { fg = palette.namespace })
+set_hl("@variable.member", { link = "Field" })
+set_hl("@variable.parameter", { link = "Argument" })
+set_hl("@function.method", { link = "Method" })
+set_hl("@string.regexp", { link = "Regexp" })
+set_hl("@string.special.url", { link = "URL" })
+set_hl("@comment.todo", { link = "Todo" })
+set_hl("@comment.warning", { link = "WarningMsg" })
+set_hl("@comment.error", { link = "ErrorMsg" })
+set_hl("@comment.note", { link = "MoreMsg" })
+set_hl("@markup.heading", { link = "Title" })
+set_hl("@markup.strong", { link = "Bold" })
+set_hl("@markup.italic", { link = "Emphasis" })
+set_hl("@markup.link", { link = "Link" })
+set_hl("@markup.link.url", { link = "URL" })
+set_hl("@markup.raw", { link = "markdownCode" })
+
+--- mini.statusline
+set_hl("MiniStatuslineModeNormal", { bg = palette.function_, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineModeInsert", { bg = palette.green, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineModeVisual", { bg = palette.keyword, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineModeReplace", { bg = palette.red, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineModeCommand", { bg = palette.yellow, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineModeOther", { bg = palette.cyan, fg = palette.bg, bold = true })
+set_hl("MiniStatuslineDevinfo", { bg = palette.bg_alt, fg = palette.fg_alt })
+set_hl("MiniStatuslineFilename", { bg = palette.base1, fg = palette.fg_alt })
+set_hl("MiniStatuslineFileinfo", { bg = palette.bg_alt, fg = palette.fg_alt })
+set_hl("MiniStatuslineInactive", { bg = palette.base1, fg = palette.grey })

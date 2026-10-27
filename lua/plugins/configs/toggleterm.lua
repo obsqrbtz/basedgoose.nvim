@@ -33,7 +33,7 @@ end
 return {
   'akinsho/toggleterm.nvim',
   version = '*',
-  cmd = { 'ToggleTerm', 'TermExec' },
+  cmd = { 'ToggleTerm', 'TermExec', 'Lazygit' },
   opts = {
     direction = 'float',
     float_opts = {
@@ -41,6 +41,10 @@ return {
     },
     shade_terminals = false,
   },
+  config = function(_, opts)
+    require('toggleterm').setup(opts)
+    vim.api.nvim_create_user_command('Lazygit', toggle_lazygit, { desc = 'Toggle lazygit' })
+  end,
   keys = {
     { '<leader>tt', '<cmd>ToggleTerm<CR>', desc = '[T]oggle [T]erminal' },
     { '<leader>gg', toggle_lazygit, desc = 'Lazy[g]it' },

@@ -37,9 +37,23 @@ local function patch_hl(group, overrides)
   vim.api.nvim_set_hl(0, group, vim.tbl_extend('force', hl, overrides))
 end
 
+local transparent_groups = {
+  'Normal',
+  'NormalNC',
+  'NormalFloat',
+  'FloatBorder',
+  'EndOfBuffer',
+  'LineNr',
+  'SignColumn',
+  'FoldColumn',
+  'VertSplit',
+  'WinSeparator',
+}
+
 local function apply_overrides()
-  patch_hl('Normal', { bg = 'none', ctermbg = 'none' })
-  patch_hl('NormalNC', { bg = 'none', ctermbg = 'none' })
+  for _, group in ipairs(transparent_groups) do
+    patch_hl(group, { bg = 'none', ctermbg = 'none' })
+  end
   patch_hl('Comment', { italic = true })
 end
 
